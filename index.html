@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAY 2026 Syllabus Submission</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1B4D72, #2E7D9A);
+            color: white;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left h1 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .header-left h2 {
+            font-size: 1.1em;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .header-left h3 {
+            font-size: 0.95em;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Form Content */
+        .form-content {
+            padding: 30px;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background: #1B4D72;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 0.95em;
+            border-radius: 6px 6px 0 0;
+        }
+        
+        .section-content {
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            overflow: hidden;
+        }
+        
+        /* Table Style Form */
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .form-table td {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+        
+        .form-table td:first-child {
+            background: #f8fafc;
+            font-weight: 600;
+            width: 180px;
+            font-size: 0.9em;
+            color: #334155;
+        }
+        
+        .form-table input[type="text"],
+        .form-table input[type="email"],
+        .form-table select,
+        .form-table textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .form-table input:focus,
+        .form-table select:focus,
+        .form-table textarea:focus {
+            outline: none;
+            border-color: #1B4D72;
+            box-shadow: 0 0 0 3px rgba(27, 77, 114, 0.1);
+        }
+        
+        .form-table textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-table .half-width {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-table .half-width > div {
+            flex: 1;
+        }
+        
+        .form-table .half-width label {
+            display: block;
+            font-size: 0.85em;
+            color: #64748b;
+            margin-bottom: 5px;
+        }
+        
+        /* Uppercase input fields */
+        .uppercase-input {
+            text-transform: uppercase;
+        }
+        
+        .uppercase-input::placeholder {
+            text-transform: none;
+        }
+        
+        /* Methods & Grading Table */
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .grade-table th {
+            background: #f1f5f9;
+            padding: 10px 8px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .grade-table td {
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .grade-table input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+        }
+        
+        .grade-table .total {
+            font-weight: 600;
+            color: #1B4D72;
+        }
+        
+        /* Weekly Schedule */
+        .week-section {
+            margin-bottom: 20px;
+        }
+        
+        .week-header {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 12px 15px;
+            font-weight: 600;
+            font-size: 0.9em;
+            border: 1px solid #bae6fd;
+            border-radius: 6px 6px 0 0;
+        }
+        
+        .week-content {
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+        }
+        
+        /* Required indicator */
+        .required {
+            color: #dc2626;
+            margin-left: 3px;
+        }
+        
+        /* Submit Button */
+        .submit-section {
+            padding: 30px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #1B4D72, #2E7D9A);
+            color: white;
+            padding: 16px 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 77, 114, 0.3);
+        }
+        
+        .submit-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Notice */
+        .notice {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top-color: #1B4D72;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+            color: white;
+        }
+        
+        /* Edit Mode Banner */
+        .edit-banner {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            padding: 15px 20px;
+            margin: 20px 30px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .edit-banner.show {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .edit-banner-icon {
+            font-size: 24px;
+        }
+        
+        .edit-banner-text {
+            color: #1e40af;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .form-content {
+                padding: 15px;
+            }
+            
+            .form-table td:first-child {
+                width: 120px;
+                font-size: 0.8em;
+            }
+            
+            .form-table .half-width {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <h1>Course Syllabus</h1>
+                <h2>2026 WINTER ABROAD AT YONSEI</h2>
+                <h3>2-WEEK PROGRAM</h3>
+            </div>
+            <div class="logo">
+                <img src="https://summer.yonsei.ac.kr/_res/summer/img/Yonsei_Logo.png" alt="Yonsei University">
+            </div>
+        </div>
+        
+        <!-- Edit Mode Banner -->
+        <div class="edit-banner" id="editBanner">
+            <div class="edit-banner-icon">&#9998;</div>
+            <div class="edit-banner-text">
+                <strong>Edit Mode</strong><br>
+                You are editing a previously submitted syllabus. Make your changes and click "Update Syllabus" to save.
+            </div>
+        </div>
+        
+        <!-- Form -->
+        <form id="syllabusForm">
+            <div class="form-content">
+                
+                <!-- Notice -->
+                <div class="notice">
+                    <strong>* Required fields</strong> must be completed before submission.<br>
+                    You will receive a confirmation email with an edit link after submission.
+                </div>
+                
+                <!-- Course Title (Large) -->
+                <div class="section">
+                    <div class="section-title">COURSE TITLE</div>
+                    <div class="section-content">
+                        <table class="form-table">
+                            <tr>
+                                <td>COURSE TITLE <span class="required">*</span></td>
+                                <td>
+                                    <input type="text" id="courseTitle" name="courseTitle" 
+                                           class="uppercase-input"
+                                           placeholder="e.g., KOREAN POPULAR CULTURE & THE KOREAN WAVE" 
+                                           style="font-size: 1.1em; font-weight: 600;"
+                                           oninput="this.value = this.value.toUpperCase()"
+                                           required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Basic Information -->
+                <div class="section">
+                    <div class="section-title">BASIC INFORMATION</div>
+                    <div class="section-content">
+                        <table class="form-table">
+                            <tr>
+                                <td>COURSE CODE-SECTION <span class="required">*</span></td>
+                                <td>
+                                    <input type="text" id="courseCode" name="courseCode" 
+                                           class="uppercase-input"
+                                           placeholder="e.g., IEE1154-01" 
+                                           oninput="this.value = this.value.toUpperCase()"
+                                           required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CREDIT / CLASS PERIOD <span class="required">*</span></td>
+                                <td>
+                                    <div class="half-width">
+                                        <div>
+                                            <label>Credits</label>
+                                            <input type="text" id="credits" name="credits" value="3" readonly 
+                                                   style="background: #f1f5f9;">
+                                        </div>
+                                        <div>
+                                            <label>Class Period</label>
+                                            <select id="classPeriod" name="classPeriod" required>
+                                                <option value="">Select...</option>
+                                                <option value="Period 1 (09:30-12:25)">Period 1 (09:30-12:25)</option>
+                                                <option value="Period 2 (13:30-16:25)">Period 2 (13:30-16:25)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OFFICE / OFFICE HOURS</td>
+                                <td>
+                                    <div class="half-width">
+                                        <div>
+                                            <label>Office</label>
+                                            <input type="text" id="office" name="office" 
+                                                   placeholder="e.g., Baekyang Hall S302">
+                                        </div>
+                                        <div>
+                                            <label>Office Hours</label>
+                                            <input type="text" id="officeHours" name="officeHours" 
+                                                   placeholder="e.g., By appointment">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>INSTRUCTOR <span class="required">*</span></td>
+                                <td>
+                                    <input type="text" id="instructor" name="instructor" 
+                                           class="uppercase-input"
+                                           placeholder="e.g., YONSEI KIM (ALL UPPERCASE)" 
+                                           oninput="this.value = this.value.toUpperCase()"
+                                           required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EMAIL <span class="required">*</span></td>
+                                <td>
+                                    <input type="email" id="email" name="email" 
+                                           placeholder="e.g., professor@university.edu" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Course Information -->
+                <div class="section">
+                    <div class="section-title">COURSE INFORMATION</div>
+                    <div class="section-content">
+                        <table class="form-table">
+                            <tr>
+                                <td>COURSE DESCRIPTION <span class="required">*</span></td>
+                                <td>
+                                    <textarea id="courseDescription" name="courseDescription" 
+                                              placeholder="Provide a comprehensive description of your course..." 
+                                              style="min-height: 150px;" required></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>COURSE GOALS <span class="required">*</span></td>
+                                <td>
+                                    <input type="text" id="goal1" name="goal1" 
+                                           placeholder="Goal 1" style="margin-bottom: 8px;" required>
+                                    <input type="text" id="goal2" name="goal2" 
+                                           placeholder="Goal 2 (Optional)" style="margin-bottom: 8px;">
+                                    <input type="text" id="goal3" name="goal3" 
+                                           placeholder="Goal 3 (Optional)" style="margin-bottom: 8px;">
+                                    <input type="text" id="goal4" name="goal4" 
+                                           placeholder="Goal 4 (Optional)">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Course Methods -->
+                <div class="section">
+                    <div class="section-title">COURSE METHODS (Total must equal 100%)</div>
+                    <div class="section-content" style="padding: 15px;">
+                        <table class="grade-table">
+                            <tr>
+                                <th>LECTURE</th>
+                                <th>PRACTICE TRAINING</th>
+                                <th>PRESENTATION</th>
+                                <th>DEBATE</th>
+                                <th>TEAM PROJECT</th>
+                                <th class="total">TOTAL</th>
+                            </tr>
+                            <tr>
+                                <td><input type="number" id="lecturePct" name="lecturePct" value="60" min="0" max="100" onchange="calcMethodsTotal()"></td>
+                                <td><input type="number" id="practicePct" name="practicePct" value="0" min="0" max="100" onchange="calcMethodsTotal()"></td>
+                                <td><input type="number" id="presentationPct" name="presentationPct" value="20" min="0" max="100" onchange="calcMethodsTotal()"></td>
+                                <td><input type="number" id="debatePct" name="debatePct" value="0" min="0" max="100" onchange="calcMethodsTotal()"></td>
+                                <td><input type="number" id="teamProjectPct" name="teamProjectPct" value="20" min="0" max="100" onchange="calcMethodsTotal()"></td>
+                                <td class="total"><span id="methodsTotal">100</span>%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Grading Policy -->
+                <div class="section">
+                    <div class="section-title">GRADING POLICY (Total must equal 100%)</div>
+                    <div class="section-content" style="padding: 15px;">
+                        <table class="grade-table">
+                            <tr>
+                                <th>MIDTERM</th>
+                                <th>FINAL EXAM</th>
+                                <th>QUIZ</th>
+                                <th>INDIVIDUAL</th>
+                                <th>TEAM</th>
+                                <th>ATTENDANCE</th>
+                                <th>OTHERS</th>
+                                <th class="total">TOTAL</th>
+                            </tr>
+                            <tr>
+                                <td><input type="number" id="midtermPct" name="midtermPct" value="30" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td><input type="number" id="finalPct" name="finalPct" value="30" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td><input type="number" id="quizPct" name="quizPct" value="20" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td><input type="number" id="individualPct" name="individualPct" value="0" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td><input type="number" id="teamAssignPct" name="teamAssignPct" value="0" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td><input type="number" id="attendancePct" name="attendancePct" value="10" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td><input type="number" id="othersPct" name="othersPct" value="10" min="0" max="100" onchange="calcGradingTotal()"></td>
+                                <td class="total"><span id="gradingTotal">100</span>%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Additional Information -->
+                <div class="section">
+                    <div class="section-title">ADDITIONAL INFORMATION</div>
+                    <div class="section-content">
+                        <table class="form-table">
+                            <tr>
+                                <td>PREREQUISITE <span class="required">*</span></td>
+                                <td>
+                                    <textarea id="prerequisite" name="prerequisite" 
+                                              placeholder="e.g., None required. This course is open to all students..." required></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>COURSE REQUIREMENTS <span class="required">*</span></td>
+                                <td>
+                                    <textarea id="courseRequirements" name="courseRequirements" 
+                                              placeholder="e.g., 1. Complete all assigned readings before class sessions..." required></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TEXTS & REFERENCES <span class="required">*</span></td>
+                                <td>
+                                    <textarea id="textsReferences" name="textsReferences" 
+                                              placeholder="List required textbooks and reference materials..." required></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Weekly Schedule -->
+                <div class="section">
+                    <div class="section-title">WEEKLY SCHEDULE (2 WEEKS)</div>
+                    <div class="section-content" style="padding: 15px;">
+                        
+                        <!-- Week 1 -->
+                        <div class="week-section">
+                            <div class="week-header">WEEK 1</div>
+                            <div class="week-content">
+                                <table class="form-table">
+                                    <tr>
+                                        <td>DAILY TOPICS <span class="required">*</span></td>
+                                        <td><textarea id="week1Topics" name="week1Topics" placeholder="Describe daily topics and contents..." required></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MATERIALS & ASSIGNMENTS</td>
+                                        <td><textarea id="week1Materials" name="week1Materials" placeholder="List course materials and assignments..."></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>REFERENCES</td>
+                                        <td><textarea id="week1References" name="week1References" placeholder="Optional references..."></textarea></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Week 2 -->
+                        <div class="week-section">
+                            <div class="week-header">WEEK 2</div>
+                            <div class="week-content">
+                                <table class="form-table">
+                                    <tr>
+                                        <td>DAILY TOPICS <span class="required">*</span></td>
+                                        <td><textarea id="week2Topics" name="week2Topics" placeholder="Describe daily topics and contents..." required></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MATERIALS & ASSIGNMENTS</td>
+                                        <td><textarea id="week2Materials" name="week2Materials" placeholder="List course materials and assignments..."></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>REFERENCES</td>
+                                        <td><textarea id="week2References" name="week2References" placeholder="Optional references..."></textarea></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Hidden field for edit ID -->
+            <input type="hidden" id="editId" name="editId" value="">
+            
+            <!-- Submit Section -->
+            <div class="submit-section" id="submitSection">
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Syllabus</button>
+            </div>
+            
+            <!-- Loading -->
+            <div class="loading" id="loadingSection">
+                <div class="spinner"></div>
+                <p>Submitting your syllabus...</p>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="success-message" id="successSection">
+                <div class="success-icon">&#10003;</div>
+                <h2 style="color: #10b981; margin-bottom: 15px;">Syllabus Submitted Successfully!</h2>
+                <p style="color: #64748b; margin-bottom: 20px;">
+                    A confirmation email with an edit link has been sent to your email address.<br>
+                    Please save that email for future reference.
+                </p>
+                <button onclick="location.reload()" class="submit-btn" style="background: #64748b;">
+                    Submit Another Syllabus
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Google Apps Script Web App URL
+        const WEBAPP_URL = 'YOUR_WEBAPP_URL_HERE';
+        
+        // Calculate methods total
+        function calcMethodsTotal() {
+            var fields = ['lecturePct', 'practicePct', 'presentationPct', 'debatePct', 'teamProjectPct'];
+            var total = 0;
+            fields.forEach(function(f) {
+                total += parseInt(document.getElementById(f).value) || 0;
+            });
+            var totalEl = document.getElementById('methodsTotal');
+            totalEl.textContent = total;
+            totalEl.style.color = total === 100 ? '#10b981' : '#dc2626';
+        }
+        
+        // Calculate grading total
+        function calcGradingTotal() {
+            var fields = ['midtermPct', 'finalPct', 'quizPct', 'individualPct', 'teamAssignPct', 'attendancePct', 'othersPct'];
+            var total = 0;
+            fields.forEach(function(f) {
+                total += parseInt(document.getElementById(f).value) || 0;
+            });
+            var totalEl = document.getElementById('gradingTotal');
+            totalEl.textContent = total;
+            totalEl.style.color = total === 100 ? '#10b981' : '#dc2626';
+        }
+        
+        // Check for edit mode (URL parameter)
+        function checkEditMode() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var editId = urlParams.get('edit');
+            
+            if (editId) {
+                document.getElementById('editId').value = editId;
+                document.getElementById('editBanner').classList.add('show');
+                document.getElementById('submitBtn').textContent = 'Update Syllabus';
+                
+                // Load existing data
+                loadExistingData(editId);
+            }
+        }
+        
+        // Load existing data for edit mode
+        async function loadExistingData(editId) {
+            try {
+                var response = await fetch(WEBAPP_URL + '?action=getData&id=' + editId);
+                var data = await response.json();
+                
+                if (data.success) {
+                    // Populate form fields
+                    Object.keys(data.values).forEach(function(key) {
+                        var el = document.getElementById(key);
+                        if (el) {
+                            el.value = data.values[key];
+                        }
+                    });
+                    
+                    calcMethodsTotal();
+                    calcGradingTotal();
+                }
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+        
+        // Form submission
+        document.getElementById('syllabusForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Validate totals
+            var methodsTotal = parseInt(document.getElementById('methodsTotal').textContent);
+            var gradingTotal = parseInt(document.getElementById('gradingTotal').textContent);
+            
+            if (methodsTotal !== 100) {
+                alert('Course Methods must total 100%. Current total: ' + methodsTotal + '%');
+                return;
+            }
+            
+            if (gradingTotal !== 100) {
+                alert('Grading Policy must total 100%. Current total: ' + gradingTotal + '%');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('submitSection').style.display = 'none';
+            document.getElementById('loadingSection').classList.add('show');
+            
+            // Collect form data
+            var formData = new FormData(this);
+            var data = {};
+            formData.forEach(function(value, key) {
+                data[key] = value;
+            });
+            
+            try {
+                var response = await fetch(WEBAPP_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                var result = await response.json();
+                
+                if (result.success) {
+                    document.getElementById('loadingSection').classList.remove('show');
+                    document.getElementById('successSection').classList.add('show');
+                } else {
+                    throw new Error(result.error || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                console.error('Error details:', error.message);
+                alert('Error submitting form: ' + error.message + '\n\nCheck console for details (F12)');
+                document.getElementById('loadingSection').classList.remove('show');
+                document.getElementById('submitSection').style.display = 'block';
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            calcMethodsTotal();
+            calcGradingTotal();
+            checkEditMode();
+        });
+    </script>
+</body>
+</html>
