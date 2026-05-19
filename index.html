@@ -719,18 +719,20 @@
             totalEl.style.color = total === 100 ? '#10b981' : '#dc2626';
         }
         
-        // Check for edit mode (URL parameter)
+        // Check for edit mode or prefill mode (URL parameter)
         function checkEditMode() {
             var urlParams = new URLSearchParams(window.location.search);
             var editId = urlParams.get('edit');
+            var prefillId = urlParams.get('prefill');
             
             if (editId) {
                 document.getElementById('editId').value = editId;
                 document.getElementById('editBanner').classList.add('show');
                 document.getElementById('submitBtn').textContent = 'Update Syllabus';
-                
-                // Load existing data
                 loadExistingData(editId);
+            } else if (prefillId) {
+                // 기존 데이터 로드만 하고 editId는 비워둠 → 새 제출로 처리
+                loadExistingData(prefillId);
             }
         }
         
