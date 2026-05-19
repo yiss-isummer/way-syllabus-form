@@ -731,8 +731,24 @@
                 document.getElementById('submitBtn').textContent = 'Update Syllabus';
                 loadExistingData(editId);
             } else if (prefillId) {
-                // 기존 데이터 로드만 하고 editId는 비워둠 → 새 제출로 처리
                 loadExistingData(prefillId);
+            }
+            
+            // Token 링크에서 기본 정보 prefill
+            var courseCode = urlParams.get('courseCode');
+            var courseTitle = urlParams.get('courseTitle');
+            var instructor = urlParams.get('instructor');
+            
+            if (courseCode) {
+                document.getElementById('courseCode').value = decodeURIComponent(courseCode);
+                document.getElementById('courseCode').readOnly = true;
+            }
+            if (courseTitle) {
+                document.getElementById('courseTitle').value = decodeURIComponent(courseTitle);
+                document.getElementById('courseTitle').readOnly = true;
+            }
+            if (instructor) {
+                document.getElementById('instructor').value = decodeURIComponent(instructor);
             }
         }
         
