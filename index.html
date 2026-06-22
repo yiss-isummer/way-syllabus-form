@@ -771,6 +771,22 @@
             if (instructor) {
                 document.getElementById('instructor').value = decodeURIComponent(instructor);
             }
+            
+            // classPeriod prefill + 잠금 (Video Lecture 교수님용)
+            var classPeriod = urlParams.get('classPeriod');
+            if (classPeriod) {
+                var cp = decodeURIComponent(classPeriod);
+                var sel = document.getElementById('classPeriod');
+                var exists = Array.from(sel.options).some(function(o) { return o.value === cp; });
+                if (!exists) {
+                    var opt = document.createElement('option');
+                    opt.value = cp;
+                    opt.textContent = cp;
+                    sel.appendChild(opt);
+                }
+                sel.value = cp;
+                sel.disabled = true;
+            }
         }
         
         // Load existing data for edit mode
@@ -799,6 +815,19 @@
         // Form submission
         document.getElementById('syllabusForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            
+            // disabled된 classPeriod 값 복원 (Video Lecture 교수님용)
+            var cpSel = document.getElementById('classPeriod');
+            if (cpSel.disabled) {
+                var hiddenCp = document.createElement('input');
+                hiddenCp.type = 'hidden';
+                hiddenCp.name = 'classPeriod';
+                hiddenCp.value = cpSel.value;
+                this.appendChild(hiddenCp);
+            }
+            
+            // Validate totals
+            var methodsTotal = ...
             
             // Validate totals
             var methodsTotal = parseInt(document.getElementById('methodsTotal').textContent);
